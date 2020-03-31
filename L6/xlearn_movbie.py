@@ -115,7 +115,7 @@ ffm_model = xl.create_fm()
 ffm_model.setTrain("./small_train.txt")
 ffm_model.setValidate("./small_test.txt")
 
-# 设置参数，任务为二分类，学习率0.2，正则项lambda: 0.002，评估指标 accuracy
+# 设置参数，任务为多分类，学习率0.2，正则项lambda: 0.002，评估指标 accuracy
 param = {'task':'reg', 'lr':0.2, 'lambda':0.002, 'metric':'acc', 'opt' : 'sgd'}
 
 # FFM训练，并输出模型
