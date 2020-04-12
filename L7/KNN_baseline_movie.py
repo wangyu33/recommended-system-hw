@@ -15,7 +15,7 @@ reader = Reader(line_format='user item rating timestamp', sep=',', skip_lines=1)
 data = Dataset.load_from_file('./ratings.csv', reader=reader)
 
 KF = KFold(n_splits=3)
-algo = KNNWithMeans(k=50, sim_options={'user_based': False, 'verbose': 'True'})
+algo = KNNBaseline(k=50, sim_options={'user_based': False, 'verbose': 'True'})
 
 for train, test in KF.split(data):
     algo.fit(train)
